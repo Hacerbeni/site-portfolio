@@ -5,10 +5,12 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { promisify } = require('node:util');
 const Database = require('better-sqlite3');
+const dotenv = require('dotenv');
 const express = require('express');
 
 const scrypt = promisify(crypto.scrypt);
 const ROOT = __dirname;
+dotenv.config({ path: path.join(ROOT, '.env') });
 const DEFAULT_DATABASE_PATH = path.join(ROOT, 'data', 'portfolio.sqlite');
 const SESSION_COOKIE = 'portfolio_session';
 const SESSION_DURATION_MS = 8 * 60 * 60 * 1000;

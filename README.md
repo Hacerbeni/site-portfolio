@@ -8,20 +8,14 @@ Prérequis : Node.js 20 ou plus récent.
 
 ```powershell
 npm install
-$secret = Read-Host "Mot de passe administrateur (12 caractères minimum)" -AsSecureString
-$env:ADMIN_PASSWORD = [System.Net.NetworkCredential]::new("", $secret).Password
+Copy-Item .env.example .env
+# Remplacez CHANGE_ME par un mot de passe unique d’au moins 12 caractères dans .env.
 npm start
 ```
 
 Ouvrir ensuite `http://127.0.0.1:3000`. L’espace de gestion se trouve à `/admin.html`. Le serveur écoute uniquement sur l’interface locale par défaut. Les données sont enregistrées dans `data/portfolio.sqlite` et ne sont pas ajoutées à Git.
 
-Pour effacer le secret de la session PowerShell après l’arrêt du serveur :
-
-```powershell
-$env:ADMIN_PASSWORD = $null
-```
-
-Sans `ADMIN_PASSWORD`, l’API publique reste disponible, mais la connexion à l’administration est désactivée. Ne définissez pas de mot de passe par défaut dans le code ou dans le dépôt. Utilisez un mot de passe long et unique.
+Le serveur lit le secret du fichier `.env` local ou de la variable d’environnement `ADMIN_PASSWORD`. `.env` est exclu de Git. Sans secret configuré, l’API publique reste disponible, mais la connexion à l’administration est désactivée. N’ajoutez jamais `.env` au dépôt.
 
 ## Administration
 
