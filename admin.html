@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101c2c">
+    <title>Administration — Portfolio</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/admin.js" defer></script>
+</head>
+<body class="admin-page">
+    <a class="skip-link" href="#admin-main">Aller au contenu</a>
+    <header class="site-header">
+        <a class="brand" href="/" aria-label="Retour au portfolio">
+            <span class="brand-mark" aria-hidden="true">BO</span>
+            <span>Portfolio<span class="brand-dot">.</span></span>
+        </a>
+        <a class="navigation admin-back" href="/">Retour au site <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main id="admin-main" class="admin-main page-width">
+        <div class="admin-heading">
+            <p class="eyebrow">Espace privé</p>
+            <h1>Administration</h1>
+            <p>Gérez le contenu de votre portfolio et consultez les messages reçus.</p>
+        </div>
+
+        <section class="admin-panel login-panel" data-login-panel aria-labelledby="login-title">
+            <h2 id="login-title">Connexion</h2>
+            <p>Connectez-vous pour accéder aux outils de gestion.</p>
+            <form data-login-form>
+                <label for="admin-password">Mot de passe administrateur</label>
+                <input id="admin-password" name="password" type="password" autocomplete="current-password" required>
+                <button class="button button-primary" type="submit">Se connecter</button>
+                <p class="form-status" data-login-status role="status" aria-live="polite"></p>
+            </form>
+        </section>
+
+        <div class="admin-dashboard" data-dashboard hidden>
+            <div class="dashboard-top">
+                <p data-dashboard-status role="status" aria-live="polite"></p>
+                <button class="button button-secondary" type="button" data-logout>Se déconnecter</button>
+            </div>
+
+            <section class="admin-panel" aria-labelledby="profile-admin-title">
+                <div class="admin-section-heading">
+                    <div><p class="eyebrow">Présentation</p><h2 id="profile-admin-title">Mon profil</h2></div>
+                </div>
+                <form class="admin-form" data-profile-form>
+                    <label for="profile-full-name">Nom complet</label>
+                    <input id="profile-full-name" name="fullName" maxlength="100" required>
+                    <label for="profile-headline">Titre</label>
+                    <input id="profile-headline" name="headline" maxlength="160" required>
+                    <label for="profile-intro">Présentation courte</label>
+                    <textarea id="profile-intro" name="intro" rows="3" maxlength="800" required></textarea>
+                    <label for="profile-education">Formation</label>
+                    <input id="profile-education" name="education" maxlength="240" required>
+                    <label for="profile-biography">Biographie (séparez les paragraphes par une ligne vide)</label>
+                    <textarea id="profile-biography" name="biography" rows="6" maxlength="3000" required></textarea>
+                    <button class="button button-primary" type="submit">Enregistrer le profil</button>
+                </form>
+            </section>
+
+            <section class="admin-panel" aria-labelledby="projects-admin-title">
+                <div class="admin-section-heading">
+                    <div><p class="eyebrow">Contenu publié</p><h2 id="projects-admin-title">Projets</h2></div>
+                </div>
+                <form class="admin-form" data-project-form>
+                    <input name="id" type="hidden">
+                    <h3 data-project-form-title>Ajouter un projet</h3>
+                    <label for="project-title">Titre</label>
+                    <input id="project-title" name="title" maxlength="120" required>
+                    <label for="project-category">Catégorie</label>
+                    <input id="project-category" name="category" maxlength="80" required>
+                    <label for="project-year">Année</label>
+                    <input id="project-year" name="year" type="number" min="1900" max="2100" required>
+                    <label for="project-description">Description</label>
+                    <textarea id="project-description" name="description" rows="4" maxlength="1600" required></textarea>
+                    <div class="form-actions">
+                        <button class="button button-primary" type="submit" data-project-submit>Ajouter le projet</button>
+                        <button class="button button-secondary" type="button" data-project-cancel hidden>Annuler la modification</button>
+                    </div>
+                </form>
+                <div class="admin-list" data-admin-projects aria-live="polite"></div>
+            </section>
+
+            <section class="admin-panel" aria-labelledby="messages-admin-title">
+                <div class="admin-section-heading">
+                    <div><p class="eyebrow">Messages des visiteurs</p><h2 id="messages-admin-title">Boîte de réception</h2></div>
+                </div>
+                <div class="admin-list" data-admin-messages aria-live="polite"></div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="page-width footer-inner">
+            <a class="brand footer-brand" href="/"><span class="brand-mark" aria-hidden="true">BO</span><span>Portfolio<span class="brand-dot">.</span></span></a>
+            <p>Zone d’administration</p>
+            <a href="/">Retour au portfolio</a>
+        </div>
+    </footer>
+</body>
+</html>

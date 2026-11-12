@@ -1,276 +1,127 @@
-```html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Portfolio - Bénéwendé Ouédraogo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Portfolio personnel : projets et compétences en développement, IoT, réseaux et intelligence artificielle.">
+    <meta name="theme-color" content="#101c2c">
+    <title>Portfolio — Bénéwendé Ouédraogo</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/script.js" defer></script>
 </head>
-
 <body>
-    <header>
-        <div class="logo">
-            <img src="40011569-green-grape-isolated-on-white-background.jpg" alt="">
-        </div>
-
-        <div class="titre">
-            <h1>Mon Portfolio</h1>
-        </div>
-
-        <div class="navigation">
-    <button class="menu-mobile" aria-label="Ouvrir le menu">
-        ☰
-    </button>
-
-    <nav>
-        <ul>
-            <li><a href="#Apropos">A propos</a></li>
-            <li><a href="#Competences">Compétences</a></li>
-            <li><a href="#projets">Projets</a></li>
-            <li><a href="#Me contacter">Contact</a></li>
-        </ul>
-    </nav>
-</div>
-
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
+    <header class="site-header">
+        <a class="brand" href="/" aria-label="Accueil du portfolio">
+            <span class="brand-mark" aria-hidden="true">BO</span>
+            <span>Portfolio<span class="brand-dot">.</span></span>
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation">
+            <span class="visually-hidden">Ouvrir le menu</span>
+            <span aria-hidden="true">☰</span>
+        </button>
+        <nav id="navigation" class="navigation" aria-label="Navigation principale">
+            <a href="#apropos">À propos</a>
+            <a href="#competences">Compétences</a>
+            <a href="#projets">Projets</a>
+            <a class="nav-contact" href="#contact">Me contacter</a>
+        </nav>
     </header>
 
-    <main>
-        <div class="contenu">
-
-            <div class="intro">
-                <blockquote>
-                    Je suis titulaire d'un Master en Réseaux émergents,
-                    IoT et Intelligence embarquée, après une formation
-                    en électronique et informatique industrielle.
-                    Je m'intéresse aux réseaux, à l'Internet des Objets,
-                    au développement et à l'intelligence artificielle.
-                </blockquote>
-            </div>
-
-            <div class="profil">
-                <div>
-                    <h2>Profil</h2>
-                    <p>
-                        Nom: Ouédraogo<br>
-                        Prénom: Bénéwendé<br>
-                        Master en Réseaux émergents, IoT et Intelligence embarquée
-                    </p>
-                </div>
-
-                <div>
-                    <img src="20230219_090401~2.jpg" alt="Photo de profil">
+    <main id="contenu">
+        <section class="hero page-width" aria-labelledby="hero-title">
+            <div class="hero-copy">
+                <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Portfolio personnel</p>
+                <h1 id="hero-title">Bonjour, je suis <span data-profile="fullName"></span></h1>
+                <p class="hero-headline" data-profile="headline"></p>
+                <p class="hero-intro" data-profile="intro">Chargement de la présentation…</p>
+                <div class="hero-actions">
+                    <a class="button button-primary" href="#projets">Découvrir mes projets <span aria-hidden="true">↗</span></a>
+                    <a class="button button-secondary" href="#contact">Parlons de votre projet</a>
                 </div>
             </div>
-
-            <div class="competences">
-                <div class="compil">
-                    <p>Développement web</p>
+            <div class="hero-visual">
+                <div class="portrait-frame">
+                    <img src="/20230219_090401~2.jpg" alt="Portrait de la personne propriétaire du portfolio" width="510" height="510">
                 </div>
+                <div class="visual-note"><span aria-hidden="true">✳</span> Curieux par nature, ingénieur de formation</div>
+            </div>
+            <a class="scroll-cue" href="#apropos"><span aria-hidden="true">↓</span> Faire défiler</a>
+        </section>
 
-                <div class="compil">
-                    <p>IA/LLM</p>
-                </div>
-
-                <div class="compil">
-                    <p>IoT/Réseau</p>
+        <section id="apropos" class="section page-width about-section" aria-labelledby="about-title">
+            <div class="section-heading">
+                <p class="eyebrow">Mon parcours</p>
+                <h2 id="about-title">À propos de moi</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-accent" aria-hidden="true"><span>01</span><i></i></div>
+                <div class="about-copy">
+                    <h3 data-profile="education"></h3>
+                    <div class="prose" data-profile="biography">
+                        <p>Chargement de mon parcours…</p>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="boutons">
-                <button class="plus">
-                    <a href="#Apropos">En savoir plus</a>
-                </button>
-
-                <button class="mct">
-                    <a href="#Me contacter">Me contacter</a>
-                </button>
+        <section id="competences" class="section skills-section" aria-labelledby="skills-title">
+            <div class="page-width">
+                <div class="section-heading section-heading-light">
+                    <p class="eyebrow">Ce que je pratique</p>
+                    <h2 id="skills-title">Compétences</h2>
+                    <p>Des compétences à la croisée du logiciel, des réseaux et des objets connectés.</p>
+                </div>
+                <div class="skills-grid" data-skills>
+                    <p class="loading-message">Chargement des compétences…</p>
+                </div>
             </div>
+        </section>
 
-            <section id="Apropos" class="apropos">
+        <section id="projets" class="section page-width projects-section" aria-labelledby="projects-title">
+            <div class="section-heading section-heading-row">
                 <div>
-                    <h2>A propos</h2>
-                    <p>
-                        Titulaire d'un Master en Réseaux émergents,
-                        IoT et Intelligence embarquée, j'ai auparavant
-                        obtenu une Licence en électronique et informatique
-                        industrielle.
-                    </p>
-
-                    <p>
-                        Mon parcours m'a permis de travailler sur des projets
-                        liés à l'électronique, aux réseaux, à l'Internet des
-                        Objets, à la programmation et à l'intelligence
-                        artificielle.
-                    </p>
-
-                    <p>
-                        Mon travail de recherche de Master porte sur la
-                        détection des attaques de type DoS et DDoS dans
-                        l'IoT en utilisant ResNet.
-                    </p>
-
-                    <p>
-                        Je développe également mes compétences en
-                        développement à travers ma formation à WISE Institute.
-                    </p>
-
-                    <p>
-                        J'ai obtenu un certificat en LLM avec Force N.
-                    </p>
+                    <p class="eyebrow">Quelques réalisations</p>
+                    <h2 id="projects-title">Projets sélectionnés</h2>
                 </div>
-            </section>
+                <p>Recherche, prototypage et développement : des projets concrets pour apprendre en faisant.</p>
+            </div>
+            <div class="projects-grid" data-projects>
+                <p class="loading-message">Chargement des projets…</p>
+            </div>
+        </section>
 
-            <section id="Competences" class="outils">
-                <h2>Compétences</h2>
-
-                <div class="livre">
-
-                    <div>
-                        <p>Développeur web</p>
-                        <ul>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>JavaScript</li>
-                            <li>Python</li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <p>IA/LLM</p>
-                        <ul>
-                            <li>Machine Learning</li>
-                            <li>Deep Learning</li>
-                            <li>Computer Vision</li>
-                            <li>TensorFlow</li>
-                            <li>ResNet</li>
-                            <li>LLM</li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <p>IoT/Réseau</p>
-                        <ul>
-                            <li>Internet des Objets</li>
-                            <li>Réseaux</li>
-                            <li>Arduino</li>
-                            <li>Edge Computing</li>
-                            <li>Fog Computing</li>
-                        </ul>
-                    </div>
-
+        <section id="contact" class="contact-section" aria-labelledby="contact-title">
+            <div class="contact-inner page-width">
+                <div class="contact-copy">
+                    <p class="eyebrow">Entrons en contact</p>
+                    <h2 id="contact-title">Une idée à concrétiser&nbsp;?</h2>
+                    <p>Parlez-moi de votre projet ou posez-moi une question. Je vous répondrai dès que possible.</p>
+                    <div class="contact-decoration" aria-hidden="true">✳</div>
                 </div>
-            </section>
+                <form class="contact-form" data-contact-form>
+                    <label for="contact-name">Votre nom</label>
+                    <input id="contact-name" name="name" type="text" autocomplete="name" maxlength="100" required>
 
-            <section id="projets">
-                <div class="realisation">
-                    <h2>Projets</h2>
+                    <label for="contact-email">Votre adresse e-mail</label>
+                    <input id="contact-email" name="email" type="email" autocomplete="email" maxlength="254" required>
 
-                    <div class="projets">
+                    <label for="contact-message">Votre message</label>
+                    <textarea id="contact-message" name="message" rows="5" minlength="10" maxlength="3000" required></textarea>
 
-                        <article>
-                            <h3>Détection des attaques DoS et DDoS dans l'IoT</h3>
-                            <p>
-                                Travail de recherche de Master consacré à la
-                                détection des attaques DoS et DDoS dans les
-                                environnements IoT en utilisant ResNet.
-                            </p>
-                        </article>
-
-                        <article>
-                            <h3>Système de contrôle à distance avec Arduino</h3>
-                            <p>
-                                Projet de Licence portant sur la conception
-                                d'un système de contrôle à distance basé
-                                sur Arduino.
-                            </p>
-                        </article>
-
-                        <article>
-                            <h3>Système de présence RFID</h3>
-                            <p>
-                                Projet utilisant un Arduino Uno WiFi Rev2,
-                                un lecteur RFID MFRC522, des LED et un buzzer
-                                pour la gestion d'un système de présence.
-                            </p>
-                        </article>
-
-                        <article>
-                            <h3>Projets IoT avec Arduino</h3>
-                            <p>
-                                Réalisation de projets utilisant des capteurs
-                                pour la détection de fumée, de lumière,
-                                de mouvement et de distance.
-                            </p>
-                        </article>
-
-                        <article>
-                            <h3>Projets avec Flutter et Node.js</h3>
-                            <p>
-                                Utilisation de Flutter et Node.js dans le cadre
-                                de projets réalisés au cours de mon parcours.
-                            </p>
-                        </article>
-
-                    </div>
-                </div>
-            </section>
-
-            <section id="Me contacter" class="contact">
-                <div>
-                    <h2>Me contacter</h2>
-
-                    <form class="contact-form">
-
-                        <label for="name">Nom :</label>
-                        <input type="text" id="name" name="name" required>
-
-                        <label for="email">Email :</label>
-                        <input type="email" id="email" name="email" required>
-
-                        <label for="message">Message :</label>
-                        <textarea id="message" name="message" required></textarea>
-
-                        <button type="submit">Envoyer</button>
-
-                    </form>
-                </div>
-            </section>
-
-        </div>
+                    <button class="button button-primary" type="submit">Envoyer le message <span aria-hidden="true">↗</span></button>
+                    <p class="form-status" data-contact-status role="status" aria-live="polite"></p>
+                </form>
+            </div>
+        </section>
     </main>
 
-    <footer class="pied">
-        <div>
-            <h3>Contacts</h3>
-
-            <ul>
-                <li>
-                    <a href="mailto:votre@email.com" target="_blank">Email</a>
-                </li>
-
-                <li>
-                    <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
-                </li>
-
-                <li>
-                    <a href="https://github.com/" target="_blank">GitHub</a>
-                </li>
-
-                <li>
-                    <a href="https://wa.me/" target="_blank">WhatsApp</a>
-                </li>
-            </ul>
-        </div>
-
-        <div>
-            <p>&copy; 2026 Bénéwendé Ouédraogo. Tous droits réservés.</p>
+    <footer class="site-footer">
+        <div class="page-width footer-inner">
+            <a class="brand footer-brand" href="/"><span class="brand-mark" aria-hidden="true">BO</span><span>Portfolio<span class="brand-dot">.</span></span></a>
+            <p>© <span data-year></span> <span data-profile="fullName"></span></p>
+            <a href="/admin.html">Administration</a>
         </div>
     </footer>
-
-<script src="script.js"></script>
 </body>
-
 </html>
-```
